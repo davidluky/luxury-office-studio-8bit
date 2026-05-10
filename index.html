@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Office Render 8-Bit</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Office Render 8-Bit</p>
+          <h1>Gerador de vídeo e áudio</h1>
+        </div>
+      </header>
+
+      <section class="workspace" aria-label="Editor">
+        <div class="preview-stage">
+          <canvas id="sceneCanvas" width="1920" height="1080" aria-label="Imagem independente de escritório luxuoso cinematográfico"></canvas>
+          <div class="approval-row">
+            <strong id="approvalStatus" class="approval-status" data-state="pending">Aguardando aprovação</strong>
+            <div class="approval-actions">
+              <button id="approveImageButton" class="pixel-button" type="button">Aprovar imagem</button>
+              <button id="newImageButton" class="pixel-button alt" type="button">Gerar nova</button>
+            </div>
+          </div>
+        </div>
+
+        <form id="renderForm" class="controls">
+          <fieldset>
+            <legend>Saída</legend>
+            <div class="segmented" role="radiogroup" aria-label="Tipo de saída">
+              <label>
+                <input type="radio" name="mode" value="video" checked />
+                <span>Vídeo</span>
+              </label>
+              <label>
+                <input type="radio" name="mode" value="audio" />
+                <span>Áudio</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Duração</legend>
+            <div class="grid-2 duration-grid">
+              <label class="field">
+                <span>Horas</span>
+                <input id="hoursInput" type="number" min="0" max="12" step="1" value="0" />
+              </label>
+              <label class="field">
+                <span>Minutos</span>
+                <input id="minutesInput" type="number" min="0" max="59" step="1" value="1" />
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset id="videoSettings">
+            <legend>Vídeo</legend>
+            <div class="grid-2">
+              <label class="field">
+                <span>Largura</span>
+                <input id="widthInput" type="number" min="320" max="3840" step="2" value="1920" />
+              </label>
+              <label class="field">
+                <span>Altura</span>
+                <input id="heightInput" type="number" min="180" max="2160" step="2" value="1080" />
+              </label>
+            </div>
+            <label class="field">
+              <span>FPS</span>
+              <input id="fpsInput" type="number" min="1" max="60" step="1" value="30" />
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Áudios</legend>
+            <label class="file-drop" for="audioInput">
+              <input id="audioInput" type="file" accept="audio/*" multiple />
+              <span>Selecionar arquivos</span>
+            </label>
+            <label class="field">
+              <span>Modo</span>
+              <select id="audioModeInput">
+                <option value="sequence">Sequência em loop</option>
+                <option value="mix">Mix simultâneo</option>
+              </select>
+            </label>
+            <ul id="audioList" class="audio-list" aria-live="polite"></ul>
+          </fieldset>
+
+          <div class="actions">
+            <button id="renderButton" class="pixel-button" type="submit" disabled>Gerar vídeo</button>
+            <button id="downloadImageButton" class="pixel-button ghost" type="button">PNG 1920x1080</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="progress-panel" aria-live="polite">
+        <div class="progress-meta">
+          <strong id="progressTitle">Pronto</strong>
+          <span id="progressPercent">0%</span>
+        </div>
+        <div class="progress-bar" aria-label="Progresso">
+          <div id="progressFill"></div>
+        </div>
+        <p id="progressDescription">Aprove a imagem para liberar o vídeo.</p>
+        <div id="downloadArea" class="download-area" hidden></div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
