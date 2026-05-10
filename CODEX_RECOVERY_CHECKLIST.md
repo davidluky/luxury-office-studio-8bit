@@ -4,7 +4,7 @@ Generated: 2026-05-10
 
 Project: `luxury-office-studio-8bit`
 
-Canonical path: `C:\Users\David\OneDrive\Desktop\Programas_funcionando\luxury-office-studio-8bit`
+Current promoted path: `C:\Users\David\OneDrive\Desktop\Programas_funcionando\luxury-office-studio-8bit`
 
 This checklist is evidence-based. It records the local promoted working copy
 present in `Programas_funcionando`; it does not claim a full manual UX,
