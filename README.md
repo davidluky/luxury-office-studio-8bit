@@ -1,25 +1,34 @@
 # Office Render 8-Bit
 
-Site local com interface minimalista 8-bit para aprovar uma imagem independente, ultra realista, escura e cinematográfica de escritório luxuoso, anexar áudios e exportar:
+Local Vite app with a minimal 8-bit interface for approving a cinematic luxury-office image, attaching local audio, and exporting browser-generated media.
 
-- vídeo WEBM com imagem estática aprovada e áudio em loop/corte;
-- áudio WEBM loopado/cortado, sem vídeo;
-- PNG 1920x1080 da cena gerada.
+## What It Does
 
-A duração é definida por horas e minutos. Para vídeo, a imagem precisa ser aprovada antes da renderização.
-Os assets fotográficos ficam em `public/assets/office-cinematic-*.png`.
+- Cycles through the generated office stills in `public/assets`.
+- Requires image approval before video export.
+- Exports a 1920x1080 PNG still from the approved scene.
+- Exports a WEBM video with the approved still and looped or mixed audio.
+- Exports audio-only WEBM from the selected local audio files.
+- Lets the operator choose duration, size, FPS, and sequential or simultaneous audio behavior.
 
-## Rodar
+## Run Locally
 
-```bash
-npm install
+```powershell
+npm ci
 npm run dev
 ```
 
-Abra `http://127.0.0.1:5173/`.
+Open `http://127.0.0.1:5173/`.
 
 ## Build
 
-```bash
+```powershell
+npm ci
 npm run build
 ```
+
+Generated folders such as `node_modules` and `dist` are not source artifacts. Recreate them locally when needed, then remove them before archiving or moving the workspace.
+
+## Operations
+
+See `RUNBOOK.md` for a short smoke checklist, safe verification commands, export boundaries, and cleanup notes.

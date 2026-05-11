@@ -21,7 +21,8 @@ security, deployment, or long-render review.
 - [x] Source files present under `src`.
 - [x] Three cinematic office PNG assets present under `public\assets`.
 - [x] Four verification screenshots present in the project root.
-- [x] No `.git` directory is present in this promoted copy.
+- [x] Local `.git` directory is present as of the 2026-05-11 maintenance pass.
+- [x] Git `origin` is `https://github.com/davidluky/luxury-office-studio-8bit.git`.
 
 ## 2026-05-10 Cleanup Verification
 
@@ -34,9 +35,21 @@ security, deployment, or long-render review.
 - [x] Removed `node_modules` and `dist` from the active root after verification
   so the project remains a maintainable source snapshot.
 
+## 2026-05-11 Maintenance Pass
+
+- [x] Added `RUNBOOK.md` with setup, build, short manual smoke, audit, cleanup,
+  and export-boundary notes.
+- [x] Added `MAINTENANCE.md` with flight-recorder and retro notes.
+- [x] Rewrote `README.md` in ASCII to remove restored encoding artifacts and
+  point operators at the runbook.
+- [x] Rechecked Git provenance; local branch tracks GitHub `origin`.
+- [x] Ran `npm ci`; command exited `0`.
+- [x] Ran `npm run build`; command exited `0`.
+- [x] Ran `npm audit --omit=dev`; command exited `0`.
+- [x] Removed generated `node_modules` and `dist` after verification.
+
 ## Not Claimed
 
-- [ ] Git history or remote provenance for this promoted copy.
 - [ ] Production deployment.
 - [ ] Full manual UX review.
 - [ ] Security review.

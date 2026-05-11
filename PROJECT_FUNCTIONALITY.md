@@ -2,12 +2,12 @@
 
 Project: `luxury-office-studio-8bit`
 
-Updated: 2026-05-10
+Updated: 2026-05-11
 
 This document describes behavior found in the local source, README, package
-metadata, image assets, and build output. It does not claim production
-deployment, security review, full manual UX review, or long media-render
-validation.
+metadata, image assets, Git state, maintenance docs, and build output. It does
+not claim production deployment, security review, full manual UX review, or
+long media-render validation.
 
 ## Purpose
 
@@ -35,6 +35,8 @@ Root scripts:
 - `npm run dev`
 - `npm run build`
 - `npm run preview`
+- `npm ci`
+- `npm audit --omit=dev`
 
 Local app entry:
 
@@ -55,13 +57,20 @@ Static assets:
 - The build produced `dist\index.html`, CSS, JavaScript, and copied the office
   image assets.
 - After verification, `node_modules` and `dist` were removed from the active
-  source tree. Recreate them with `npm install` / `npm run build`.
+  source tree. Recreate them with `npm ci` / `npm run build`.
 - No test script is defined in `package.json`.
+- 2026-05-11 maintenance recheck confirmed the promoted folder is now a local
+  Git repo with `origin` at
+  `https://github.com/davidluky/luxury-office-studio-8bit.git`.
+- 2026-05-11 maintenance pass added `RUNBOOK.md` and `MAINTENANCE.md`, rewrote
+  the README to remove restored encoding artifacts, and documented the short
+  manual smoke path.
+- 2026-05-11 safe verification ran `npm ci`, `npm run build`, and
+  `npm audit --omit=dev`; all exited `0`. Generated `node_modules` and `dist`
+  were removed afterward.
 
 ## Known Limits And Not Claimed
 
-- No `.git` directory is present, so this promoted copy has no local branch,
-  remote, or history evidence.
 - No automated test suite is defined.
 - No production deployment is claimed.
 - No full browser/media compatibility matrix is claimed.
@@ -74,6 +83,8 @@ Static assets:
 - `README.md`
 - `package.json`
 - `package-lock.json`
+- `RUNBOOK.md`
+- `MAINTENANCE.md`
 - `index.html`
 - `src\main.js`
 - `src\styles.css`
